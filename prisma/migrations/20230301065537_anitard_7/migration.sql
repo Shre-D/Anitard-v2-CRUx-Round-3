@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "dashboard" ALTER COLUMN "watched" SET DATA TYPE TEXT[],
+ALTER COLUMN "watching" SET DATA TYPE TEXT[],
+ALTER COLUMN "notInterested" SET DATA TYPE TEXT[];
