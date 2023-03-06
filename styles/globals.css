@@ -1,0 +1,20 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap");
+
+@layer base {
+  body {
+    @apply h-screen bg-gradient-to-br bg-no-repeat bg-fixed text-white from-black to-slate-700;
+  }
+  header {
+    @apply top-0 z-50 flex w-full items-center justify-between transition-all px-2 py-2 lg:px-8 lg:py-4;
+  }
+}

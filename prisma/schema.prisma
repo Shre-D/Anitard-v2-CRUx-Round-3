@@ -1,0 +1,30 @@
+// schema.prisma
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model user {
+  id        Int         @id @default(autoincrement())  
+  appid     String      @unique
+  username  String      
+  provider  String
+  email     String
+  image     String
+  dashboard dashboard[]
+}
+
+model dashboard {
+  id            Int    @id @default(autoincrement())
+  userId        String @unique 
+  user          user   @relation(fields: [userId], references: [appid])
+  watched       Json
+  watching      Json
+  notInterested Json
+  watchstatus   String
+}
