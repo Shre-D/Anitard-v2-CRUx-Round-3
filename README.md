@@ -70,6 +70,6 @@ Search results have been now segregated into anime and manga results. These sear
 Currently, this project is not hosted anywhere since there are some details I'm not sure of. Once they're clarified, it will be hosted.
 However, prior versions of this app are hosted, and can be checked.
 
-First instance of Anitard can be found here, [Anitard](https://anitard.vercel.app/)
+First instance of Anitard can be found here [Anitard](https://anitard.vercel.app/).
 
-Second instance of Anitard, with streaming added. [Anitard](https://anitard.netlify.app/)
+Second instance of Anitard, with streaming added [Anitard](https://anitard.netlify.app/).
