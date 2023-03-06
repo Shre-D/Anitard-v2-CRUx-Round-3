@@ -63,6 +63,12 @@ Search results have been now segregated into anime and manga results. These sear
 
 8)Using RapidAPI to provide users with a better music page. In here, users can search for songs, and possibly stream and download them. Also planning to add a feature where users can be recommended spotify playlists based on their tastes.
 
-9)Using Machine Learning to recommend users anime, based on their Anitard ratings and reviews. Not sure about whether this will come to be,
+9)Using Machine Learning to recommend users anime, based on their Anitard ratings and reviews. Not sure about whether this will ever come to be.
 
+------------------------------------------------------------------
+### Hosting
+Currently, this project is not hosted anywhere since there are some details I'm not sure of. Once they're clarified, it will be hosted.
+However, prior versions of this app are hosted, and can be checked.
 
+First instance of Anitard can be found here, [Anitard](https://anitard.vercel.app/)
+Second instance of Anitard, with streaming added. [Anitard](https://anitard.netlify.app/)
