@@ -57,7 +57,7 @@ Search results have been now segregated into anime and manga results. These sear
 
 5)Making this project mobile resposive. This website isn't pleasing to they eye at all on mobile devices. This will take quite a while to implement.
 
-6)Learning how to use an implement better Global State Management using Redux and Context API.
+6)Learning how to use and implement better Global State Management using Redux and Context API.
 
 7)Adding a custom server to this project, independent of the `/pages/api/` route Nextjs offers. Not sure about this, though.
 
