@@ -3,7 +3,7 @@
 This project was built for the round 3 inductions of CRUx, BPHC.
 
 # Anitard v2
-Anitard is a website where users can search,discover and stream their favourite anime and search and view manga too. Anitard v2 adds streaming to Anitard along with a bunch of new cool features. Now, users can Login through various providers, mark and favourite anime, sort anime search results through various parameters and much more.
+Anitard is a website where users can search,discover and stream their favourite anime and search and view manga too. Anitard v2 adds streaming to Anitard along with a bunch of new cool features. Now, users can Login through various providers,review, mark and favourite anime,  sort anime search results through various parameters and much more.
 
 This project uses Nextjs, React, MaterialUI icons and Tailwind for the frontend. It uses PostgresSQL, Prisma, Redis, NextAuth,Supabase,Cloudinary and Apollo with GraphQL query fetching on the backend.
 
@@ -29,7 +29,7 @@ The tasks assigned to me were the following:-
 
 3)After logging in, users are redirected to the Dashboard where they can view and change their Profile Picture. The images are hosted on Cloudinary CDN.
 
-4)Configured API's to use Redis powered caching. Set an expiry timer for them, and also set `maxmemory` to `100mb` and `maxmemory-policy` to `volatile-lru` to add LRU caching. Redis-server runs on the port 6379.
+4)Configured API's to use Redis powered caching. Set an expiry timer for them, and also set `maxmemory-policy` to `allkeys-lru` to add LRU caching. Redis-server runs on the port 6379.
 
 5)Used svg's and hooks to add loading skeletons in the app where pages require fetching from an API to provide a better user experience. They are also styled to match the layout of the information the page displays.
 
@@ -37,6 +37,9 @@ The tasks assigned to me were the following:-
 ### Brownie Points Tasks Done:
 1) Created pages for individual anime and manga. Also used GraphQL to query and fetch in these pages using the AniList GraphQL API and Apollo Client. The page shows all relevant details related to the anime, such as score, genres, synopsis and year and season of release, along with a background image and trailer(if it exists).
 2) Allowed users to sort through anime they search for in the Homepage. They can sort anime based on Release Year, Score, Popularity and Number of Episodes.
+
+###Extra Brownie Points Tasks Done:
+Added a review system to Anitard. Users can now review anime by providing a rating and commenting on it. These comments are visible under the stream window of each anime. This task was given to me on text. Users are allowed one review per anime as of now.
 
 Additionally, a JWT strategy has been used with NextAuth to provide a secure Sign in experience. Currently working on caching user sessions. 
 
@@ -51,7 +54,7 @@ Search results have been now segregated into anime and manga results. These sear
 
 2)Currently I'm working on making existing backends CRUD. They already feature Create, Read and Update but Delete needs to be worked on. Also planning on making user profiles more modular, so users can change their username and add a bio. Also adding a feature for users to delete their accounts.
 
-3)Another important feature being worked on is an Anitard review system where users can add comments to particular anime and give them a rating (counted separately from AniList and MAL rating). This feature will be added very soon.
+3)Another important feature being worked on is an Anitard review system where users can add comments to particular anime and give them a rating (counted separately from AniList and MAL rating). This feature will be added very soon. (Done :))
 
 4)Considering using TanStack to rewrite fetches performed. Also, considering to rewrite several pieces of code with better logic.
 
