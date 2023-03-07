@@ -16,7 +16,6 @@ function PrepareHomeAnime({ animeList, searched }: Props) {
   animeList = animeList.filter(((i:any) => i.aired.from?.slice(0, 4) as number!=0));
   animeList = animeList.filter(((i:any) => i.popularity!=null ));
   animeList = animeList.filter(((i:any) => i.score!=null ));
-  
   animeList = animeList.filter(((i:any) => i.aired.from?.slice(0, 4) as number!=null ));
 
   function sortByPopularity(animeList: any) {
