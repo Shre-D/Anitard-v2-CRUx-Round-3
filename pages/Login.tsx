@@ -26,9 +26,9 @@ function Login() {
             <form action="">
             <GoogleLoginButton onClick={()=>{signIn('google',{callbackUrl:'/Dashboard'})}}/>
             <div className='mb-4'></div>
-            <GithubLoginButton />
+            <GithubLoginButton onClick={()=>{signIn('github',{callbackUrl:'/Dashboard'})}}/>
             <div className='mb-4'></div>
-            <DiscordLoginButton />
+            <DiscordLoginButton onClick={()=>{signIn('discord',{callbackUrl:'/Dashboard'})}}/>
               <div className='flex flex-col items-center justify-center pt-5'>
                 <h1 className='pt-6'>Continue without Signing In</h1>
                 <Link href="/">
