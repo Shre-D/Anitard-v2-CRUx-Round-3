@@ -224,7 +224,7 @@ function Media() {
             id={id}
             episodes={data.Media.episodes == null ? 2000 : data.Media.episodes}
           />
-          <Comments/>
+          <Comments id={id}/>
         </div>
           )  
   );
