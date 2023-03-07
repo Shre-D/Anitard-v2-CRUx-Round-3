@@ -23,7 +23,7 @@ The tasks assigned to me were the following:-
 >Create pages for individual anime where you’ll be showing cover Image, title, and any other relevant text you feel. Along with the improved filtering now available to the user, they should also be able to sort the filtered list. Allow them to sort on various parameters such as title, release date, and popularity. You may use any cloud based service to achieve the filtering or sorting. 
 
 # Tasks Done:
-1)Implemented OAuth through Google, Github and Discord using NextAuth. As of now, only Google provides the best functionality while using the app. The rest will be configured soon.
+1)Implemented OAuth through Google, Github and Discord using NextAuth. All logins are password-less.
 
 2)Provided a Dashboard where users can see anime they mark as watching, watched and uninterested. Used the `/pages/api/` in Nextjs for the backend required. The entire backend comprises of PostgresSQL DB hosted on Supabase, Redis, NextJS and Prisma ORM.
 
@@ -38,12 +38,12 @@ The tasks assigned to me were the following:-
 1) Created pages for individual anime and manga. Also used GraphQL to query and fetch in these pages using the AniList GraphQL API and Apollo Client. The page shows all relevant details related to the anime, such as score, genres, synopsis and year and season of release, along with a background image and trailer(if it exists).
 2) Allowed users to sort through anime they search for in the Homepage. They can sort anime based on Release Year, Score, Popularity and Number of Episodes.
 
-###Extra Brownie Points Tasks Done:
+### Extra Brownie Points Tasks Done:
 Added a review system to Anitard. Users can now review anime by providing a rating and commenting on it. These comments are visible under the stream window of each anime. This task was given to me on text. Users are allowed one review per anime as of now.
 
 Additionally, a JWT strategy has been used with NextAuth to provide a secure Sign in experience. Currently working on caching user sessions. 
 
-Streaming has been added to the app and users can stream anime with no ads at all. This is done using the Consumet API and using sandboxes in iframes to not allow pop-ups. Users can report anime that are not able to be streamed, and a solution is provided in the form of an `exceptions.ts` file, where anime that use exceptional titles which make sending the request url harder are configured to work.
+Streaming has been added to the app. This is done using the Consumet API and regex. Users can report anime that are not able to be streamed, and a solution is provided in the form of an `exceptions.ts` file, where anime that use exceptional titles which make sending the request url harder are configured to work.
 
 Search results have been now segregated into anime and manga results. These search results are powered using the MyAnimeList Jikan API.
 
