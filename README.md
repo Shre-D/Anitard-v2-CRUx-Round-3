@@ -23,7 +23,7 @@ The tasks assigned to me were the following:-
 >Create pages for individual anime where you’ll be showing cover Image, title, and any other relevant text you feel. Along with the improved filtering now available to the user, they should also be able to sort the filtered list. Allow them to sort on various parameters such as title, release date, and popularity. You may use any cloud based service to achieve the filtering or sorting. 
 
 # Tasks Done:
-1)Implemented OAuth through Google, Github and Discord using NextAuth. As of now, only Google provides the best functionality while using the app. The rest will be configured soon.
+1)Implemented OAuth through Google, Github and Discord using NextAuth. All logins are password-less.
 
 2)Provided a Dashboard where users can see anime they mark as watching, watched and uninterested. Used the `/pages/api/` in Nextjs for the backend required. The entire backend comprises of PostgresSQL DB hosted on Supabase, Redis, NextJS and Prisma ORM.
 
