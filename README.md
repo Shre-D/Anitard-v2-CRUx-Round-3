@@ -38,7 +38,7 @@ The tasks assigned to me were the following:-
 1) Created pages for individual anime and manga. Also used GraphQL to query and fetch in these pages using the AniList GraphQL API and Apollo Client. The page shows all relevant details related to the anime, such as score, genres, synopsis and year and season of release, along with a background image and trailer(if it exists).
 2) Allowed users to sort through anime they search for in the Homepage. They can sort anime based on Release Year, Score, Popularity and Number of Episodes.
 
-###Extra Brownie Points Tasks Done:
+### Extra Brownie Points Tasks Done:
 Added a review system to Anitard. Users can now review anime by providing a rating and commenting on it. These comments are visible under the stream window of each anime. This task was given to me on text. Users are allowed one review per anime as of now.
 
 Additionally, a JWT strategy has been used with NextAuth to provide a secure Sign in experience. Currently working on caching user sessions. 
