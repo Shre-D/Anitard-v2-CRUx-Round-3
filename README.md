@@ -43,7 +43,7 @@ Added a review system to Anitard. Users can now review anime by providing a rati
 
 Additionally, a JWT strategy has been used with NextAuth to provide a secure Sign in experience. Currently working on caching user sessions. 
 
-Streaming has been added to the app and users can stream anime with no ads at all. This is done using the Consumet API and using sandboxes in iframes to not allow pop-ups. Users can report anime that are not able to be streamed, and a solution is provided in the form of an `exceptions.ts` file, where anime that use exceptional titles which make sending the request url harder are configured to work.
+Streaming has been added to the app. This is done using the Consumet API and regex. Users can report anime that are not able to be streamed, and a solution is provided in the form of an `exceptions.ts` file, where anime that use exceptional titles which make sending the request url harder are configured to work.
 
 Search results have been now segregated into anime and manga results. These search results are powered using the MyAnimeList Jikan API.
 
