@@ -10,21 +10,31 @@ generator client {
 }
 
 model user {
-  id        Int         @id @default(autoincrement())  
+  id        Int         @id @default(autoincrement())
   appid     String      @unique
-  username  String      
+  username  String
   provider  String
   email     String
   image     String
   dashboard dashboard[]
+  review    review[]
 }
 
 model dashboard {
   id            Int    @id @default(autoincrement())
-  userId        String @unique 
+  userId        String @unique
   user          user   @relation(fields: [userId], references: [appid])
   watched       Json
   watching      Json
   notInterested Json
   watchstatus   String
+}
+
+model review {
+  id            Int    @id @default(autoincrement())
+  userId        String 
+  user          user   @relation(fields: [userId], references: [appid])
+  animeID       Int
+  Comment       String
+  Rating        Int
 }

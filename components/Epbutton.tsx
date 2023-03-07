@@ -45,7 +45,6 @@ function Epbutton({value,id,info,chooseEpisode,getEpisodeNo}:Props) {
         }
 
         }
-    console.log(title);
     
   return (
     <div>

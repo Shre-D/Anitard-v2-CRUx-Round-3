@@ -8,6 +8,8 @@ interface Props {
 }
 
 function ButtonDisplay({ episodes, id }: Props,ref:any) {
+  
+
   const [eplink, setEplink] = useState<string | null>("");
   const [number,setNumber]=useState<string | number | readonly string[] | undefined>()
 
@@ -20,7 +22,6 @@ function ButtonDisplay({ episodes, id }: Props,ref:any) {
   }
 
   const data = getAnime(id, "ANIME");
-  console.log(data);
 
   const episodesAdjusted = episodes + 1;
   var episodeList: Array<string> = [];
@@ -47,7 +48,6 @@ function ButtonDisplay({ episodes, id }: Props,ref:any) {
                 allowFullScreen
                 frameBorder={2}
                 scrolling="no"
-                sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
               ></iframe>
             </div>
           ) : (
