@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import HomeDisplay from "../components/HomeDisplay";
 import Link from "next/link";
 import HomeImages from "../components/HomeImages";
@@ -8,11 +8,8 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 export default function Home() {
   const [animeList, setAnimeList] = useState([]);
-  const [animeListZoro, setAnimeListZoro] = useState([]);
   const [mangaList, setMangaList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [animeBoxList, setAnimeBoxList] = useState([]);
-  const [mangaBoxList, setMangaBoxList] = useState([]);
   const [searched, setSearched] = useState(false);
   const [search, setSearch] = useState("");
 
@@ -38,8 +35,6 @@ export default function Home() {
     getSearchResult(search);
   };
 
- console.log(animeList);
- 
   return (
     <div>
       <Head>
@@ -98,9 +93,9 @@ export default function Home() {
                     className="space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center"
                   >
                     <div className="ml-6 h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-4"></div>
-                    
+
                     <div className="flex p-6">
-                    <div className="mr-24">
+                      <div className="mr-24">
                         <div className="h-8 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-4"></div>
                         <div className="grid grid-cols-3 gap-5">
                           <div className="h-80 w-[28vh] bg-gray-300 rounded-3xl  dark:bg-gray-700"></div>

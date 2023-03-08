@@ -1,11 +1,9 @@
-import MenuOpenOutlinedIcon from "@mui/icons-material/MenuOpenOutlined";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import Link from "next/link";
-import { useSession,signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 
 function Header() {
-
-  const{data:session}=useSession()
+  const { data: session } = useSession();
 
   return (
     <header>
@@ -26,9 +24,7 @@ function Header() {
         </Link>
         <ul className="flex md:hidden space-x-4">
           <li className="cursor-pointer text-sm font-light transition duration-75 hover:text-[#00e5ff]">
-            <Link href="/">
-              Home
-            </Link>
+            <Link href="/">Home</Link>
           </li>
           <li className="cursor-pointer text-sm font-light transition duration-75 hover:text-[#00e5ff]">
             <Link href="/Anime">Anime</Link>
@@ -48,17 +44,23 @@ function Header() {
         </ul>
       </div>
       <div className="flex items-center font-light space-x-2 text-sm">
-        {session?
-        <button className="rounded-2xl bg-purple-700 p-2" onClick={()=>{signOut()}}>Sign Out</button>
-        :<Link href="/Login">
-          <button className="rounded-2xl bg-purple-700 p-2">Sign In</button>
-        </Link>
-}
-
+        {session ? (
+          <button
+            className="rounded-2xl bg-purple-700 p-2"
+            onClick={() => {
+              signOut();
+            }}
+          >
+            Sign Out
+          </button>
+        ) : (
+          <Link href="/Login">
+            <button className="rounded-2xl bg-purple-700 p-2">Sign In</button>
+          </Link>
+        )}
         <Link href="/Dashboard">
-        <ManageAccountsIcon className="h-6 w-6 hover:bg-cyan-600 rounded-full" />
+          <ManageAccountsIcon className="h-6 w-6 hover:bg-cyan-600 rounded-full" />
         </Link>
-
       </div>
     </header>
   );

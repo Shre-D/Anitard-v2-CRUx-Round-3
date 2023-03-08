@@ -10,22 +10,20 @@ export default function Animepage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-      const loadanime= async () => {
-        const topanime=await(await fetch("/api/Anime/TopAnime")).json()
-        const animedisplay=await(await fetch("api/Anime/SeasonalAnime")).json()
-        setTopAnime(topanime.data)
-        setAnimeDisplay(animedisplay.data)
-        setLoading(false)
-      }
-     setTimeout(loadanime,2000)     
+    const loadanime = async () => {
+      const topanime = await (await fetch("/api/Anime/TopAnime")).json();
+      const animedisplay = await (
+        await fetch("api/Anime/SeasonalAnime")
+      ).json();
+      setTopAnime(topanime.data);
+      setAnimeDisplay(animedisplay.data);
+      setLoading(false);
+    };
+    setTimeout(loadanime, 2000);
   }, []);
 
-  console.log(animeDisplay);
-  
-
   return (
-    animeDisplay&&
-    (
+    animeDisplay && (
       <div>
         <Head>
           <title>Anitard-Anime</title>

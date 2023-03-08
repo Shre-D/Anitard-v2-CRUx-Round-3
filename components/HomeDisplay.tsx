@@ -1,23 +1,13 @@
-import SearchCardAnime from "./SearchCardAnime";
-import SearchCardManga from "./SearchCardManga";
-import { Animetype } from "../types";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { Animetype } from "../types/types";
 import PrepareHomeAnime from "./PrepareHomeAnime";
 import PrepareHomeManga from "./PrepareHomeManga";
 
-export interface ZoroType {
-  currentPage: number;
-  hasNextPage: boolean;
-  totalPages:  number;
-  results:     Result[];
-}
-
 export interface Result {
-  id:    string;
+  id: string;
   title: string;
-  type:  Type;
+  type: Type;
   image: string;
-  url:   string;
+  url: string;
 }
 
 export enum Type {
@@ -29,18 +19,17 @@ export enum Type {
 interface Props {
   animeList: Animetype[];
   mangaList: Animetype[];
-  searched:boolean
-
+  searched: boolean;
 }
 
-function HomeDisplay({animeList,mangaList,searched}:Props) {
+function HomeDisplay({ animeList, mangaList, searched }: Props) {
   return (
     <main className="flex mt-16 bg-purple">
       <div>
-          <PrepareHomeAnime animeList={animeList} searched={searched}/>      
+        <PrepareHomeAnime animeList={animeList} searched={searched} />
       </div>
-       <div>
-          <PrepareHomeManga mangaList={mangaList} searched={searched}/>
+      <div>
+        <PrepareHomeManga mangaList={mangaList} searched={searched} />
       </div>
     </main>
   );

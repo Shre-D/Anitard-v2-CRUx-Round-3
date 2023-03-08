@@ -1,8 +1,6 @@
-import { dividerClasses } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
-import { userAgent } from "next/server";
 
 interface Props {
   anime: any;
@@ -11,22 +9,22 @@ interface Props {
 
 function SearchCardAnime({ anime, searched }: Props) {
   const [animeDetails, setAnimeDetails] = useState<Object>();
-  const [status,setStatus]=useState<String>();
-  const {data:session}=useSession()
+  const [status, setStatus] = useState<String>();
+  const { data: session } = useSession();
 
-  function decideStatus(status:string){
-    if(status=="watching"){
-      return {status:"watching"}
+  function decideStatus(status: string) {
+    if (status == "watching") {
+      return { status: "watching" };
     }
-    if(status=="watched"){
-      return {status:"watched"}
+    if (status == "watched") {
+      return { status: "watched" };
     }
-    if(status=="uninterested"){
-      return {status:"uninterested"}
+    if (status == "uninterested") {
+      return { status: "uninterested" };
+    } else {
+      return { status: "undecided" };
     }
-    else{
-      return {status:"undecided"}}
-    }
+  }
 
   // interface Decision{
   //   status:string
@@ -40,16 +38,14 @@ function SearchCardAnime({ anime, searched }: Props) {
       body: JSON.stringify({
         animeDetails: animeDetails,
         id: session?.user.id,
-        status:status
+        status: status,
       }),
       headers: {
         "Content-Type": "application/json",
       },
     });
     const res = await result.json();
-    console.log(res)
   };
-
 
   return (
     <div className="relative">
@@ -70,49 +66,49 @@ function SearchCardAnime({ anime, searched }: Props) {
                 )}
                 <div className="absolute flex flex-col opacity-0 hover:opacity-100 bg-slate-400">
                   <form
-                  onSubmit={(e)=>{
-                  e.preventDefault()               
-                  submitHandler()
-                  }}
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      submitHandler();
+                    }}
                   >
                     <button
-                      onClick={(e) =>{
-                        setStatus("watching")
+                      onClick={(e) => {
+                        setStatus("watching");
                         setAnimeDetails({
                           ID: anime?.mal_id,
                           title: anime?.title,
                           image: anime?.images.jpg.large_image_url,
                           score: anime?.score,
-                        })}
-                      }
+                        });
+                      }}
                       className=" hover:bg-red-200 w-48 transition-200 px-4 py-2 text-sm text-black bg-red-100 rounded shadow"
                     >
                       Add to watching
                     </button>
                     <button
-                      onClick={(e)=>{
-                        setStatus("watched")
+                      onClick={(e) => {
+                        setStatus("watched");
                         setAnimeDetails({
                           ID: anime?.mal_id,
                           title: anime?.title,
                           image: anime?.images.jpg.large_image_url,
-                          score: anime?.score
-                        })
+                          score: anime?.score,
+                        });
                       }}
                       className=" hover:bg-red-200 w-48 transition-200 px-4 py-2 text-sm text-black bg-red-100 rounded shadow"
                     >
                       Add to watched
                     </button>
                     <button
-                      onClick={(e) =>{
-                        setStatus("uninterested")
+                      onClick={(e) => {
+                        setStatus("uninterested");
                         setAnimeDetails({
                           ID: anime?.mal_id,
                           title: anime?.title,
                           image: anime?.images.jpg.large_image_url,
                           score: anime?.score,
-                        })}
-                      }
+                        });
+                      }}
                       className=" hover:bg-red-200 w-48 transition-200 px-4 py-2 text-sm text-black bg-red-100 rounded shadow"
                     >
                       Add to uninterested
