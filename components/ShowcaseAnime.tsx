@@ -1,5 +1,5 @@
 import React from "react";
-import { Animetype } from "../types";
+import { Animetype } from "../types/types";
 import { useState, useEffect } from "react";
 
 interface Props {

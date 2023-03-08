@@ -2,22 +2,21 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useRef, useState } from "react";
 import DashboardCard from "./DashboardCard";
-import ThumbnailAnime from "./ThumbnailAnime";
 
-interface DashboardAnime{
-    ID: number,
-    title: string,
-    image: string,
-    score: number,
+interface DashboardAnime {
+  ID: number;
+  title: string;
+  image: string;
+  score: number;
 }
 
 interface Props {
-  watching:Array<DashboardAnime>|null
-  watched:Array<DashboardAnime>|null
-  uninterested:Array<DashboardAnime>|null
+  watching: Array<DashboardAnime> | null;
+  watched: Array<DashboardAnime> | null;
+  uninterested: Array<DashboardAnime> | null;
 }
 
-function DashboardCarousel({ watching, watched , uninterested }: Props) {
+function DashboardCarousel({ watching, watched, uninterested }: Props) {
   const rowRef = useRef<HTMLDivElement>(null);
   const rowRef1 = useRef<HTMLDivElement>(null);
   const [isMoved, setIsMoved] = useState(false);
@@ -66,10 +65,12 @@ function DashboardCarousel({ watching, watched , uninterested }: Props) {
 
   return (
     <div>
-      <div className="text-3xl mb-6 ml-4 text-transparent bg-clip-text bg-gradient-to-tr from-purple-500 to-rose-600">Watchlist</div>
+      <div className="text-3xl mb-6 ml-4 text-transparent bg-clip-text bg-gradient-to-tr from-purple-500 to-rose-600">
+        Watchlist
+      </div>
       <div className="h-40 pb-80 space-y-0.5 md:space-y-2">
         <h2 className="p-1 w-56 cursor-pointer text-xl ml-3 font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-cyan-500 to-pink-400 transition duration-200 hover:text-white md:text-2xl">
-          Watching {'('+watching?.length+')'}
+          Watching {"(" + watching?.length + ")"}
         </h2>
         <div className="relative group md:-ml-2">
           <KeyboardArrowLeftIcon
@@ -93,7 +94,7 @@ function DashboardCarousel({ watching, watched , uninterested }: Props) {
       </div>
       <div className="h-40 pt-2 pb-80 space-y-0.5 md:space-y-2">
         <h2 className="p-1 w-56 cursor-pointer text-xl ml-3 font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-cyan-500 to-pink-400 transition duration-200 hover:text-white md:text-2xl">
-          Watched {'('+watched?.length+')'}
+          Watched {"(" + watched?.length + ")"}
         </h2>
         <div className="relative group md:-ml-2">
           <KeyboardArrowLeftIcon
@@ -117,7 +118,7 @@ function DashboardCarousel({ watching, watched , uninterested }: Props) {
       </div>
       <div className="h-40 pb-80 space-y-0.5 md:space-y-2">
         <h2 className="p-2 w-56 cursor-pointer text-xl ml-3 font-semibold text-transparent bg-clip-text bg-gradient-to-tr from-cyan-500 to-pink-400 transition duration-200 hover:text-white md:text-2xl">
-          Uninterested {'('+uninterested?.length+')'}
+          Uninterested {"(" + uninterested?.length + ")"}
         </h2>
         <div className="relative group md:-ml-2">
           <KeyboardArrowLeftIcon

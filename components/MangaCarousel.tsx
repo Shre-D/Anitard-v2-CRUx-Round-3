@@ -1,7 +1,7 @@
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { Animetype } from "../types";
-import { useRef, useState, useEffect } from "react";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { Animetype } from "../types/types";
+import { useRef, useState } from "react";
 import ThumbnailManga from "./ThumbnailManga";
 
 interface Props {
@@ -83,7 +83,7 @@ function MangaCarousel({ topManga, manwha }: Props) {
               ref={rowRef1}
             >
               {manwha.map((manga) => (
-                <ThumbnailManga key={manga?.mal_id} manga={manga}/>
+                <ThumbnailManga key={manga?.mal_id} manga={manga} />
               ))}
             </div>
             <KeyboardArrowRightIcon

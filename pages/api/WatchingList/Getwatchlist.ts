@@ -7,7 +7,7 @@ export default async function handler(
 ) {
   try{
     const {id} = req.body;
-    const dashboard=await prisma.dashboard.findUnique({
+    const dashboard=await prisma.dashboard.findFirst({
         where:{userId:id},
     })
     res.send({dashboard})

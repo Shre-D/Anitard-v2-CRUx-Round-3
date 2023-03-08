@@ -22,8 +22,6 @@ function Comments({ id }: Props) {
   const [reviewPrompt, setReviewPrompt] = useState<boolean>(false);
   const [comment, setComment] = useState<string>();
   const [reviews, setReviews] = useState<Array<Review> | null>();
-  console.log(comment);
-  console.log(rating);
   const { data: session } = useSession();
 
   async function GetReviews() {
@@ -45,7 +43,6 @@ function Comments({ id }: Props) {
   useEffect(() => {
     GetReviews();
   }, []);
-  console.log(reviews);
 
   async function submitHandler() {
     const result = await fetch("/api/Reviews/CreateReview", {
@@ -61,7 +58,6 @@ function Comments({ id }: Props) {
       },
     });
     const res = await result.json();
-    console.log(res);
   }
 
   if (session) {
@@ -176,21 +172,18 @@ function Comments({ id }: Props) {
         to write a review
         <div className="mt-6"></div>
         {reviews?.map((review, index) => (
-              <div>
-                <div className="flex mb-2">
-                  <h1>
-                    <span className="mt-4 bg-purple-400 rounded p-1">
-                      {review?.user.username}
-                    </span>
-                  </h1>
-                  <h1 className="ml-4 text-yellow-400">
-                    {" "}
-                    Rating-{review?.Rating}
-                  </h1>
-                </div>
-                <h2 className="mb-4">{review?.Comment}</h2>
-              </div>
-            ))}
+          <div>
+            <div className="flex mb-2">
+              <h1>
+                <span className="mt-4 bg-purple-400 rounded p-1">
+                  {review?.user.username}
+                </span>
+              </h1>
+              <h1 className="ml-4 text-yellow-400"> Rating-{review?.Rating}</h1>
+            </div>
+            <h2 className="mb-4">{review?.Comment}</h2>
+          </div>
+        ))}
       </div>
     );
   }

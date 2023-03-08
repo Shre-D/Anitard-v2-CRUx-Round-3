@@ -1,4 +1,4 @@
-import { useQuery, gql } from '@apollo/client';
+import { useQuery, gql } from "@apollo/client";
 
 export interface reception {
   id: Number;
@@ -14,8 +14,8 @@ export interface reception {
       name: string;
     }[];
   };
-  seasonYear:number
-  season:string|null
+  seasonYear: number;
+  season: string | null;
   description: string | null;
   averageScore: number;
   status: string;
@@ -31,49 +31,47 @@ export interface MediaResponse {
 }
 
 const getAnimeDetails = gql`
-    query ($id: Int) { 
-      Media (idMal:$id type:ANIME){
-        id
-        idMal
-        siteUrl
-        title {
-          romaji
-          english
-          native
-        }
-        genres
-        studios {
-          nodes{
-            name
-          }
-        }
-        seasonYear
-        season
-        coverImage {
-          medium
-        }
-        bannerImage
-        volumes
-        episodes
-        description (asHtml:false)
-        averageScore
-        status
-        format
-        trailer {
-          id
-          site
+  query($id: Int) {
+    Media(idMal: $id, type: ANIME) {
+      id
+      idMal
+      siteUrl
+      title {
+        romaji
+        english
+        native
+      }
+      genres
+      studios {
+        nodes {
+          name
         }
       }
-    }`;
+      seasonYear
+      season
+      coverImage {
+        medium
+      }
+      bannerImage
+      volumes
+      episodes
+      description(asHtml: false)
+      averageScore
+      status
+      format
+      trailer {
+        id
+        site
+      }
+    }
+  }
+`;
 
-
-export default function getAnime(
-  id: Number,
-  type: "ANIME",
-) {  const { loading, error, data } = useQuery(getAnimeDetails, {
-     variables: {id,type},
-});
-    if(loading)return loading
-    if(error) return(<>{JSON.stringify(error)}</>)
-    return data;
+export default function getAnime(id: Number, type: "ANIME") {
+  const { loading, error, data } = useQuery(getAnimeDetails, {
+    variables: { id, type },
+  });
+  if (loading) return loading;
+  if (error) return <>{JSON.stringify(error)}</>;
+  return data;
 }

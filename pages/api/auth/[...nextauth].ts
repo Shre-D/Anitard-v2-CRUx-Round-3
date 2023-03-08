@@ -3,12 +3,11 @@ import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 import DiscordProvider from "next-auth/providers/discord";
 
-
 export default NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID as string,
-      clientSecret: process.env.GOOGLE_SECRET as string
+      clientSecret: process.env.GOOGLE_SECRET as string,
     }),
     GithubProvider({
       clientId: process.env.GITHUB_ID as string,
@@ -20,7 +19,7 @@ export default NextAuth({
     }),
   ],
   session: {
-    strategy: 'jwt',
+    strategy: "jwt",
   },
   callbacks: {
     session: async ({ session, token }) => {
@@ -30,14 +29,13 @@ export default NextAuth({
       }
       return session;
     },
-    jwt: async ({ user, token,account }) => {
+    jwt: async ({ user, token, account }) => {
       if (user) {
         token.uid = user.id;
-        token.provider=account?.provider;
+        token.provider = account?.provider;
       }
       return token;
     },
   },
-  secret:process.env.NEXTAUTH_SECRET
-  }
-)
+  secret: process.env.NEXTAUTH_SECRET,
+});

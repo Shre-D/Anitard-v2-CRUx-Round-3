@@ -41,9 +41,8 @@ async function sendSeasonalAnime(){
     isCached=true;
     results=JSON.parse(cachedResults)
   }else{
-    results=await getSeasonalAnimeFromMAL()
+    results=await getSeasonalAnimeFromMAL()    
     console.log(results);
-    
     setkey('season',600,JSON.stringify(results))
   }    
   res.send({

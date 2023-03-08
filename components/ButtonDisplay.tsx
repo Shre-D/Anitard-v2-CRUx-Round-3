@@ -7,19 +7,21 @@ interface Props {
   id: number;
 }
 
-function ButtonDisplay({ episodes, id }: Props,ref:any) {
-  
-
+function ButtonDisplay({ episodes, id }: Props, ref: any) {
   const [eplink, setEplink] = useState<string | null>("");
-  const [number,setNumber]=useState<string | number | readonly string[] | undefined>()
+  const [number, setNumber] = useState<
+    string | number | readonly string[] | undefined
+  >();
 
   const chooseEpisode = (eplink: string) => {
     setEplink(eplink);
   };
 
-  const getEpisodeNo =(number:string | number | readonly string[] | undefined)=>{
-    setNumber(number)
-  }
+  const getEpisodeNo = (
+    number: string | number | readonly string[] | undefined
+  ) => {
+    setNumber(number);
+  };
 
   const data = getAnime(id, "ANIME");
 
@@ -28,7 +30,6 @@ function ButtonDisplay({ episodes, id }: Props,ref:any) {
   for (var i = 1; i < episodesAdjusted!; i++) {
     episodeList.push(String(i));
   }
-  console.log(eplink);
   return (
     <div ref={ref} className="bg-black">
       <div className="flex items-center justify-center border-3 border-white">
@@ -62,7 +63,9 @@ function ButtonDisplay({ episodes, id }: Props,ref:any) {
             id={id}
             info={data.Media}
             chooseEpisode={(eplink: string) => chooseEpisode(eplink)}
-            getEpisodeNo={(number:string | number | readonly string[] | undefined)=>getEpisodeNo(number)}
+            getEpisodeNo={(
+              number: string | number | readonly string[] | undefined
+            ) => getEpisodeNo(number)}
           />
         ))}
       </div>
@@ -70,4 +73,4 @@ function ButtonDisplay({ episodes, id }: Props,ref:any) {
   );
 }
 
-export default forwardRef (ButtonDisplay);
+export default forwardRef(ButtonDisplay);

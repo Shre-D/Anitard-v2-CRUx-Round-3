@@ -1,7 +1,6 @@
 import React from "react";
-import { Animetype } from "../types";
+import { Animetype } from "../types/types";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 
 interface Props {
   topManga: Animetype[];

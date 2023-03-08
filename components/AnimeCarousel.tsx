@@ -1,6 +1,6 @@
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { Animetype } from "../types";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { Animetype } from "../types/types";
 import { useRef, useState } from "react";
 import ThumbnailAnime from "./ThumbnailAnime";
 

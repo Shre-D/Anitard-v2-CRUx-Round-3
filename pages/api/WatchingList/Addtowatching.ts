@@ -15,7 +15,7 @@ export default async function handler(
         }
 
         const {animeDetails,id,status} = req.body;
-        const existingUser= await prisma.dashboard.findUnique({
+        const existingUser= await prisma.dashboard.findFirst({
           where: { userId: id},
         });
         console.log(existingUser)
@@ -102,7 +102,7 @@ export default async function handler(
         if(existingUser){
 
           if(status=="watching"){
-            const currentuserdata= await prisma.dashboard.findUnique({
+            const currentuserdata= await prisma.dashboard.findFirst({
               where:{
                 userId:id
               },
@@ -119,7 +119,7 @@ export default async function handler(
             }
             else{
               let updatedArray=currentuserdata?.watching?.userwatching.concat([animeDetails])
-              const dashboard=await prisma.dashboard.update({
+              const dashboard=await prisma.dashboard.updateMany({
                 where:{
                   userId:id
                 },
@@ -135,7 +135,7 @@ export default async function handler(
                   
           }
           if(status=="watched"){
-              const currentuserdata= await prisma.dashboard.findUnique({
+              const currentuserdata= await prisma.dashboard.findFirst({
                 where:{
                   userId:id
                 },
@@ -153,7 +153,7 @@ export default async function handler(
               else{
                 let updatedArray=currentuserdata?.watched?.userwatched.concat([animeDetails])
                 console.log(updatedArray);
-                const dashboard=await prisma.dashboard.update({
+                const dashboard=await prisma.dashboard.updateMany({
                   where:{
                     userId:id
                   },
@@ -170,7 +170,7 @@ export default async function handler(
 
           }
           if(status=="uninterested"){
-            const currentuserdata= await prisma.dashboard.findUnique({
+            const currentuserdata= await prisma.dashboard.findFirst({
               where:{
                 userId:id
               },
@@ -188,7 +188,7 @@ export default async function handler(
             else{
               let updatedArray=currentuserdata?.notInterested?.useruninterested.concat([animeDetails])
               console.log(updatedArray);
-              const dashboard=await prisma.dashboard.update({
+              const dashboard=await prisma.dashboard.updateMany({
                 where:{
                   userId:id
                 },
