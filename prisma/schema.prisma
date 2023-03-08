@@ -22,7 +22,7 @@ model user {
 
 model dashboard {
   id            Int    @id @default(autoincrement())
-  userId        String @unique
+  userId        String 
   user          user   @relation(fields: [userId], references: [appid])
   watched       Json
   watching      Json
