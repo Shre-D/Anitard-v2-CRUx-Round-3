@@ -46,19 +46,21 @@ export default function Home() {
       <Header />
       <main className="pb-24">
         <div className="pt-24">
-          <div className="transition-1000 ">
-            <Link href="/" onClick={refreshPage}>
-              <h1 className="text-8xl pb-6 flex items-center justify-center font-medium font-manrope text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-400 to-pink-500 hover:white">
+          <div className="transition-1000 ">          
+              <div className="flex items-center justify-center">
+              <Link href="/" onClick={refreshPage}>
+              <h1 className="text-8xl w-[60vh] pb-6 flex items-center justify-center font-medium font-manrope text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-400 to-pink-500 hover:white">
                 ANITARD
               </h1>
-            </Link>
+              </Link>
+              </div>
           </div>
           <div className="grid place-items-center">
             <form className="" onSubmit={HandleSearch}>
               <input
                 type="text"
                 placeholder="🔍 Search here..."
-                className="transition-200 pl-4 bg-white text-black font-semibold rounded-3xl h-14 w-[90vh] hover:bg-gray-200"
+                className="bg-slate-700 transition-200 pl-4 text-white font-semibold rounded-3xl h-14 w-[90vh] hover:bg-gray-600"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 required
