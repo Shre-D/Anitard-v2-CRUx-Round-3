@@ -182,7 +182,7 @@ function Dashboard() {
                           Confirm
                         </button>
                         <h1 className="mt-2 text-red-400">
-                          Wait 3 seconds and confirm!!!
+                          Wait 5 seconds and confirm!!!
                         </h1>
                       </div>
                     ) : (

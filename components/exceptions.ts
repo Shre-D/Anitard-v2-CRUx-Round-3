@@ -22,7 +22,10 @@ const exceptions=
     }},
     {name:{falsy:"boku-no-hero-academia-6",
            truthy:"boku-no-hero-academia-6th-season" 
-    }}
+    }},
+    {name:{falsy:"youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e",
+           truthy:"youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-tv" 
+    }},
     ]
 
 export default exceptions
