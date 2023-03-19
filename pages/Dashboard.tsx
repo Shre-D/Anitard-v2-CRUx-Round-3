@@ -150,7 +150,7 @@ function Dashboard() {
             <img className="rounded-full p-5" src={pfp} />
             <div>
               <h1 className="mt-8 mb-4 text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-300">
-                {session?.user.name}'s Dashboard
+                {session?.user.name}&apos;s Dashboard
               </h1>
               <button
                 className="bg-purple-700 p-2 rounded-2xl"
@@ -177,9 +177,6 @@ function Dashboard() {
                           className="bg-purple-700 p-2 rounded-2xl"
                           onClick={() => {
                             setTimeout(updatePfp, 2000);
-                            setTrigger(3);
-                            setTrigger(4);
-                            setTrigger(5);
                           }}
                         >
                           Confirm

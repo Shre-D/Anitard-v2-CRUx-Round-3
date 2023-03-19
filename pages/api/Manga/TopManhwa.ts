@@ -1,10 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-const redis=require('redis');
-const client = redis.createClient({
-  socket: {
-      host: '127.0.0.1',
-      port: '6379'
-  }
+import { createClient } from 'redis';
+
+const client = createClient({
+    password: process.env.REDIS_PASSWORD,
+    socket: {
+        host: process.env.REDIS_HOST,
+        port: process.env.REDIS_PORT as number|undefined
+    }
 });
 
 client.on('error', (err:any) => {

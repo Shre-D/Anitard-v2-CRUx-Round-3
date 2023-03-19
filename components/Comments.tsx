@@ -133,8 +133,8 @@ function Comments({ id }: Props) {
                 Reviews
               </span>{" "}
             </h1>
-            {reviews?.map((review, index) => (
-              <div>
+            {reviews?.map((review) => (
+              <div key={id}>
                 <div className="flex mb-2">
                   <h1>
                     <span className="mt-4 bg-purple-400 rounded p-1">
@@ -171,8 +171,8 @@ function Comments({ id }: Props) {
         </Link>{" "}
         to write a review
         <div className="mt-6"></div>
-        {reviews?.map((review, index) => (
-          <div>
+        {reviews?.map((review) => (
+          <div key={id}>
             <div className="flex mb-2">
               <h1>
                 <span className="mt-4 bg-purple-400 rounded p-1">

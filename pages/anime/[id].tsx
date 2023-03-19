@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState, useRef } from "react";
 import Header from "../../components/Header";
 import ReactPlayer from "react-player/lazy";
-import getAnime from "../../components/Anilist/getAnime";
+import GetAnime from "../../components/Anilist/getAnime";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import ButtonDisplay from "../../components/ButtonDisplay";
 import Comments from "../../components/Comments";
@@ -24,7 +24,7 @@ function Media() {
   const fid = router.query.id;
   const id = Number(fid);
   const [showPlayer, setShowPlayer] = useState(false);
-  const data = getAnime(id, "ANIME");
+  const data = GetAnime(id, "ANIME");
 
   const ref = useRef<null | HTMLDivElement>(null);
 
@@ -149,7 +149,7 @@ function Media() {
                       </span>
                     </>{" "}
                     {data.Media.genres.map((genre: string) => (
-                      <button className="mx-2 p-2 bg-slate-200 text-black">
+                      <button key={id} className="mx-2 p-2 bg-slate-200 text-black">
                         {genre}
                       </button>
                     ))}

@@ -59,6 +59,7 @@ function ButtonDisplay({ episodes, id }: Props, ref: any) {
       <div className="grid grid-cols-12 mt-8">
         {episodeList.map((v) => (
           <Epbutton
+            key={id}
             value={v}
             id={id}
             info={data.Media}

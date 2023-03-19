@@ -8,7 +8,7 @@ export default async function handler(
   try {
     const { username, email, appid, provider, image } = req.body;
 
-    const existingUser = await prisma.user.findUnique({
+    const existingUser = await prisma.user.findFirst({
       where: {
         appid: appid,
       },
@@ -23,7 +23,7 @@ export default async function handler(
           email: email,
           appid: appid,
           provider: provider,
-          image: image,
+          image: image||"",
         },
       });
       res.send({ user });

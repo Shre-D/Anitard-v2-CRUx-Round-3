@@ -111,6 +111,7 @@ export default async function handler(
               }        
             })
 
+            //@ts-ignore
             let currentArray=currentuserdata?.watching?.userwatching
             const animeAlreadyInList=checkDuplicates(currentArray)
             if(animeAlreadyInList){
@@ -118,6 +119,7 @@ export default async function handler(
               return
             }
             else{
+              //@ts-ignore
               let updatedArray=currentuserdata?.watching?.userwatching.concat([animeDetails])
               const dashboard=await prisma.dashboard.updateMany({
                 where:{
@@ -143,7 +145,7 @@ export default async function handler(
                   watched:true
                 }        
               })
-
+              //@ts-ignore
               let currentArray=currentuserdata?.watched?.userwatched
               const animeAlreadyInList=checkDuplicates(currentArray)
               if(animeAlreadyInList){
@@ -151,6 +153,7 @@ export default async function handler(
                 return
               }
               else{
+                //@ts-ignore
                 let updatedArray=currentuserdata?.watched?.userwatched.concat([animeDetails])
                 console.log(updatedArray);
                 const dashboard=await prisma.dashboard.updateMany({
@@ -178,7 +181,7 @@ export default async function handler(
                 notInterested:true
               }        
             })
-
+            //@ts-ignore
             let currentArray=currentuserdata?.notInterested?.useruninterested
             const animeAlreadyInList=checkDuplicates(currentArray)
             if(animeAlreadyInList){
@@ -186,6 +189,7 @@ export default async function handler(
               return
             }
             else{
+              //@ts-ignore
               let updatedArray=currentuserdata?.notInterested?.useruninterested.concat([animeDetails])
               console.log(updatedArray);
               const dashboard=await prisma.dashboard.updateMany({

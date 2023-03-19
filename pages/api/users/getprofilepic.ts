@@ -7,7 +7,7 @@ export default async function handler(
 ) {
   try {
     const { appid } = req.body;
-    const image = await prisma.user.findUnique({
+    const image = await prisma.user.findFirst({
       where: {
         appid: appid,
       },

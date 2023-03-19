@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import Header from "../../components/Header";
 import ReactPlayer from "react-player/lazy";
-import getManga from "../../components/Anilist/getManga";
+import GetManga from "../../components/Anilist/getManga";
 import { PlusIcon, XMarkIcon } from "@heroicons/react/24/solid";
 
 function Manga() {
@@ -22,7 +22,7 @@ function Manga() {
   const fid = router.query.id;
   const id = Number(fid);
   const [showPlayer, setShowPlayer] = useState(false);
-  const data = getManga(id,"MANGA");
+  const data = GetManga(id,"MANGA");
   console.log(data)
 
   return (
@@ -88,7 +88,7 @@ function Manga() {
                 {" "}
                 {" "}
                   {data.Media.genres.map((genre: string) => (
-                    <button className="mx-2 p-2 bg-slate-200 text-black">
+                    <button key={id} className="mx-2 p-2 bg-slate-200 text-black">
                       {genre}
                     </button>
                   ))}

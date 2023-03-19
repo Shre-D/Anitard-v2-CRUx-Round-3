@@ -67,7 +67,7 @@ const getMangaDetails = gql`
   }
 `;
 
-export default function getAnime(id: Number, type: "MANGA") {
+export default function GetManga(id: Number, type: "MANGA") {
   const { loading, error, data } = useQuery(getMangaDetails, {
     variables: { id, type },
   });

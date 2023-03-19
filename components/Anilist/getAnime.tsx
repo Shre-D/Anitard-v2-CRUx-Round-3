@@ -67,7 +67,7 @@ const getAnimeDetails = gql`
   }
 `;
 
-export default function getAnime(id: Number, type: "ANIME") {
+export default function GetAnime(id: Number, type: "ANIME") {
   const { loading, error, data } = useQuery(getAnimeDetails, {
     variables: { id, type },
   });
