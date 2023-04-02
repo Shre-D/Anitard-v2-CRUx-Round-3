@@ -7,7 +7,7 @@ import Link from "next/link";
 function Dashboard() {
   const [image, setImage] = useState<string | Blob>("");
   const [url, setUrl] = useState<string | undefined>();
-  const [pfp, setPfp] = useState<string>();
+  const [pfp, setPfp] = useState<string>("https://i.quotev.com/tz2fzngudhra.jpg");
   const { data: session } = useSession();
   const [trigger, setTrigger] = useState(1);
   const [uploaded, setUploaded] = useState(false);
@@ -33,7 +33,7 @@ function Dashboard() {
     const data = new FormData();
     data.append("file", image);
     data.append("upload_preset", "uomxnt5e");
-    data.append("cloud_name", "dwfuw3y3n");
+    data.append("cloud_name", "dwfuw3y3n");  //make env?
 
     fetch("https://api.cloudinary.com/v1_1/dwfuw3y3n/image/upload", {
       method: "post",
@@ -106,12 +106,6 @@ function Dashboard() {
     Promise.all([getDashboard(), getPfp()]);
     setLoading(false);
   }, [trigger]);
-
-  async function imageProcess() {
-    await setTimeout(uploadImage, 5000);
-    await setTimeout(updatePfp, 10000);
-    await setTimeout(getPfp, 2000);
-  }
 
   if (session) {
     createUser();
@@ -189,7 +183,7 @@ function Dashboard() {
                       <button
                         className="bg-purple-700 p-2 rounded-2xl"
                         onClick={() => {
-                          setTimeout(uploadImage);
+                          uploadImage();
                           setUploaded(true);
                         }}
                       >
